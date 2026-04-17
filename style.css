@@ -1,82 +1,90 @@
-
 * {
-    box-sizing: border-box;
-  }
-  
-  body {
-    font-family: helvetica, arial, sans-serif;
-    margin: 25px;
-  }
-  
-  main {
-    display:block;
-    height:175px;
-  }
-  
-  header {
-    border-bottom: 1px solid black;
-  }
-  
-  h1 {
-    font-weight: bold;
-    color: #000;
-  }
-  
-  .bold {
-    font-weight: bold;
-  }
-  
-  p {
-    max-width: 600px;
-  }
-  
-  
-  li {
-    margin-bottom: 5px;
-  }
-  
-  footer {
-    padding-top: 25px;
-    border-top: 1px solid black;
-  }
-  
-  footer a {
-    float:left;
-    margin:5px;
-  }
-  
-  .pet-image {
-    height:250px;
-  }
-  
-  .dashboard div {
-    display:block;
-  }
-  
-  .pet-image-container {
-    float:left;
-    padding:10px;
-  }
-  
-  .dashboard {
-    float:left;
-    padding:20px;
-  }
-  
-  .button-container {
-    margin-top:20px;
-  }
-  
-  .button-container button {
-    width: 100px;
-      margin-right: 10px;
-      text-align: center;
-      display: inline-block;
-      float: left;
-    font-size:15px;
-    background-color: #1e2835;
-    border-color: #404853;
-    cursor:pointer;
-    background-image: linear-gradient(to bottom,rgba(246,246,246,.1)0%,rgba(30,40,53,0)66%);
-    color: #fafafa;
-  }
+  box-sizing: border-box;
+}
+
+body {
+  font-family: helvetica, arial, sans-serif;
+  margin: 25px;
+  background-color: rgb(40, 40, 40);
+}
+
+main {
+  display: block;
+  min-height: 250px;
+}
+
+header {
+  margin-left: 20px;
+  border-bottom: 1px solid #fafafa;
+}
+
+h1 {
+  font-weight: bold;
+  color: #fafafa;
+}
+
+.pet-image {
+  height: 250px;
+  border-radius: 2em;
+}
+
+.pet-image-container {
+  float: left;
+  padding: 10px;
+}
+
+.dashboard-top {
+  float: left;
+  margin-top: 20px;
+  margin-left: 15px;
+  padding: 20px;
+  color: #fafafa;
+  background-color: #170f24;
+  border-radius: 2em;
+}
+
+.button-container {
+  margin-bottom: 20px;
+  padding: 17px;
+}
+
+.button-container button {
+  width: 100px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  border-radius: 20px;
+  text-align: center;
+  display: inline-block;
+  float: left;
+  font-size: 15px;
+  background-color: #1e2835;
+  border-color: #404853;
+  cursor: pointer;
+  background-image: linear-gradient(to bottom, rgba(246,246,246,.1) 0%, rgba(30,40,53,0) 66%);
+  color: #fafafa;
+  padding: 10px;
+}
+
+.pet-message-box {
+  margin-top: 15px;
+  padding: 12px;
+  background-color: #2b1d42;
+  border-radius: 12px;
+  color: #ffd56b;
+  font-style: italic;
+}
+
+.yellow-glow {
+  box-shadow: 0 0 20px #ffd56b;
+}
+.green-glow {
+  box-shadow: 0 0 20px #6bffa4;
+}
+.blue-glow {
+  box-shadow: 0 0 20px #6bceff;
+}
+
+.sleepy {
+  opacity: 0.4;
+  filter: grayscale(20%);
+}
