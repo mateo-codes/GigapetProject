@@ -25,6 +25,7 @@ $(function() { // Makes sure that your function is called once all the DOM eleme
       hunger: 5,
       message: "Hi!"
     };  
+
     function clickedTreatButton() {
       // Increase pet happiness
       // Increase pet weight
@@ -87,27 +88,27 @@ $(function() { // Makes sure that your function is called once all the DOM eleme
       // then after we can use the jQuery method .addClass() to add the neccessary css class to this image
         switch (x) {
           case "Treat":
-            $('.pet-image').removeClass('green-glow', 'yellow-glow', 'sleepy');
+            $('.pet-image').removeClass('green-glow', 'yellow-glow', 'purple-glow');
             $('.pet-image').addClass('blue-glow');
             break;
 
           case "Play":
-            $('.pet-image').removeClass('blue-glow', 'yellow-glow', 'sleepy');
+            $('.pet-image').removeClass('blue-glow', 'yellow-glow', 'purple-glow');
             $('.pet-image').addClass('green-glow');
             break;
           
           case "Exercise":
-            $('.pet-image').removeClass('green-glow', 'blue-glow', 'sleepy');
+            $('.pet-image').removeClass('green-glow', 'blue-glow', 'purple-glow');
             $('.pet-image').addClass('yellow-glow');
             break;
 
           case "Nap": 
-            $('.pet-image').removeClass('green-glow', 'yellow-glow', 'blue-glow');
-            $('.pet-image').addClass('sleepy');
+            $('.pet-image').removeClass('green-glow', 'yellow-glow', 'purple-glow');
+            $('.pet-image').addClass('blue-glow');
             break;
 
           default:
-            $('.pet-image').removeClass('green-glow', 'yellow-glow', 'blue-glow', 'sleepy');
+            $('.pet-image').removeClass('green-glow', 'yellow-glow', 'blue-glow', 'purple-glow');
             break;
         }
       }

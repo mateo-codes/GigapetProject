@@ -84,7 +84,6 @@ h1 {
   box-shadow: 0 0 20px #6bceff;
 }
 
-.sleepy {
-  opacity: 0.4;
-  filter: grayscale(20%);
+.purple-glow {
+  box-shadow: 0 0 20px #774fe5;
 }
