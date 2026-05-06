@@ -27,11 +27,21 @@ $(function() { // Makes sure that your function is called once all the DOM eleme
     };  
 
     function clickedTreatButton() {
+
+      console.log("Treat buton pressed");
+
+      // Intentionally cause a browser performance violation
+      // Cause Violation
+      const start = Date.now();
+      while (Date.now() - start < 500) {
+        // blocks the browser for 500ms
+      }
+
       // Increase pet happiness
       // Increase pet weight
-      pet_info.happiness += 2;
+      pet_info.happiness += 1;
       pet_info.weight += 1;
-      pet_info.hunger -= 1;
+      pet_info.hunger -= 3;
       pet_info.message = "Yum! That treat was delicious!";
 
       addRemoveClasses("Treat");
@@ -39,13 +49,17 @@ $(function() { // Makes sure that your function is called once all the DOM eleme
       showPetMessage();
       checkAndUpdatePetInfoInHtml();
     }
+
     
     function clickedPlayButton() {
+
+      console.log("Play buton pressed");
+
       // Increase pet happiness
       // Decrease pet weight
       pet_info.happiness += 3;
-      pet_info.weight -= 1;
-      pet_info.hunger += 1;
+      pet_info.weight -= 2;
+      pet_info.hunger += 2;
       pet_info.message = "Yay! I love playing";
 
       addRemoveClasses("Play");
@@ -55,9 +69,15 @@ $(function() { // Makes sure that your function is called once all the DOM eleme
     }
     
     function clickedExerciseButton() {
+
+      console.log("Exercise buton pressed");
+
+      // Cause 404 Network Error
+      fetch("missing-file.json");
+
       // Decrease pet happiness
       // Decrease pet weight
-      pet_info.happiness -= 1;
+      pet_info.happiness -= 2;
       pet_info.weight -= 2;
       pet_info.strength += 2;
       pet_info.hunger += 2;
@@ -67,22 +87,28 @@ $(function() { // Makes sure that your function is called once all the DOM eleme
 
       showPetMessage();
       checkAndUpdatePetInfoInHtml();
+
     }
 
+    let pet = undefined;
     function clickedNapButton() {
-      pet_info.happiness += 1;
-      pet_info.strength -= 1;
-      pet_info.hunger += 1;
+      console.log("Nap buton pressed");
+
+      pet_info.happiness += 2;
+      pet_info.strength -= 4;
+      pet_info.hunger += 3;
       pet_info.message = "Zzz... I feel well rested now!";
 
       addRemoveClasses("Nap");
 
       showPetMessage();
       checkAndUpdatePetInfoInHtml();
+
+      // Cause Type Error
+      console.log(pet.name);
     }
 
-    function addRemoveClasses(x) {
-      
+    function addRemoveClasses(x) {  
       // jQuery method: .removeClass(): Since we are going to be adding a glow effect around our pet image via a css class,
       // we want to first remove all any other possible effect classes on our image,
       // then after we can use the jQuery method .addClass() to add the neccessary css class to this image
@@ -114,24 +140,35 @@ $(function() { // Makes sure that your function is called once all the DOM eleme
       }
   
     function checkAndUpdatePetInfoInHtml() {
-      checkStats();  
+      checkStats();
       updatePetInfoInHtml();
+      
+      // log all pet info as a table
+       console.table(pet_info);
     }
     
     function checkStats() {
       //  Conditional checks to see if anything is lower than zero, we should clamp all to zero
-      if (pet_info.weight < 0) {
+      console.group("Stat Checks");
+      if (pet_info.weight <= 0) {
+        console.warn("Weight is zero!");
         pet_info.weight = 0;
       }
-      if (pet_info.happiness < 0) {
+      if (pet_info.happiness <= 0) {
+        console.warn("Happiness is zero!");
         pet_info.happiness = 0;
       }
       if (pet_info.hunger < 0) {
-        pet_info.hunger = 0;
+        console.error("Hunger is below zero!");
       }
-      if (pet_info.strength < 0) {
+      if (pet_info.hunger >= 30) {
+        console.warn("Totoro is starving!");
+      }
+      if (pet_info.strength <= 0) {
+        console.warn("Strength is zero!");
         pet_info.strength = 0;
       }
+      console.groupEnd();
     }
     
     // Updates your HTML with the current values in your pet_info object
