@@ -28,7 +28,7 @@ $(function() { // Makes sure that your function is called once all the DOM eleme
 
     function clickedTreatButton() {
 
-      console.log("Treat buton pressed");
+      console.log("Treat buton pressed!");
 
       // Intentionally cause a browser performance violation
       // Cause Violation
