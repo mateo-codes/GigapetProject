@@ -29,14 +29,6 @@ $(function() { // Makes sure that your function is called once all the DOM eleme
     function clickedTreatButton() {
 
       console.log("Treat buton pressed!");
-
-      // Intentionally cause a browser performance violation
-      // Cause Violation
-      const start = Date.now();
-      while (Date.now() - start < 500) {
-        // blocks the browser for 500ms
-      }
-
       // Increase pet happiness
       // Increase pet weight
       pet_info.happiness += 1;
@@ -66,15 +58,9 @@ $(function() { // Makes sure that your function is called once all the DOM eleme
 
       showPetMessage();
       checkAndUpdatePetInfoInHtml();
-      // Test
     }
     
     function clickedExerciseButton() {
-
-      console.log("Exercise buton pressed");
-
-      // Cause 404 Network Error
-      fetch("missing-file.json");
 
       // Decrease pet happiness
       // Decrease pet weight
@@ -91,7 +77,6 @@ $(function() { // Makes sure that your function is called once all the DOM eleme
 
     }
 
-    let pet = undefined;
     function clickedNapButton() {
       console.log("Nap buton pressed");
 
@@ -105,8 +90,6 @@ $(function() { // Makes sure that your function is called once all the DOM eleme
       showPetMessage();
       checkAndUpdatePetInfoInHtml();
 
-      // Cause Type Error
-      console.log(pet.name);
     }
 
     function addRemoveClasses(x) {  
@@ -150,7 +133,6 @@ $(function() { // Makes sure that your function is called once all the DOM eleme
     
     function checkStats() {
       //  Conditional checks to see if anything is lower than zero, we should clamp all to zero
-      console.group("Stat Checks");
       if (pet_info.weight <= 0) {
         console.warn("Weight is zero!");
         pet_info.weight = 0;
@@ -169,7 +151,6 @@ $(function() { // Makes sure that your function is called once all the DOM eleme
         console.warn("Strength is zero!");
         pet_info.strength = 0;
       }
-      console.groupEnd();
     }
     
     // Updates your HTML with the current values in your pet_info object
